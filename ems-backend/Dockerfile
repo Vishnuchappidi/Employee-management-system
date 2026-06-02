@@ -2,8 +2,9 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
-# copy ONLY backend folder into container
-COPY ems-backend ./ems-backend
+# copy only backend project into container
+COPY ems-backend/pom.xml ems-backend/
+COPY ems-backend/src ems-backend/src
 
 WORKDIR /app/ems-backend
 
