@@ -28,43 +28,71 @@ const ListEmployeeComponent = () => {
         console.error(error);
     })
     }
-  return (
-    <div className='container'>
-        <h2 className='text-center'>
-            List of Employees
-            </h2>
-            <button className='btn btn-primary mb-2' onClick={addNewEmployee}>Add Employee</button>
-            <table className='table table-striped table-bordered'>
-                <thead>
-                    <tr>
-                    <th> Employee id</th>
-                        <th> Employee First Name</th>
-                        <th> Employee First Name</th>
-                        <th> Employee Email</th>
-                        <th>Actions</th>
-                    </tr>
+    return (
+        <div className="container mt-5">
+      
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h1 className="fw-bold">Employee Management</h1>
+              <p className="text-muted">Manage your employees efficiently</p>
+            </div>
+      
+            <button
+              className="btn btn-primary btn-lg"
+              onClick={addNewEmployee}
+            >
+              + Add Employee
+            </button>
+          </div>
+      
+          <div className="card shadow-lg border-0">
+            <div className="card-body">
+      
+              <table className="table table-hover align-middle">
+                <thead className="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th className="text-center">Actions</th>
+                  </tr>
                 </thead>
+      
                 <tbody>
-                    {
-                        employees.map(employee =>
-                            <tr key={employee.id}>
-                                <td>{employee.id}</td>
-                                <td>{employee.firstName}</td>
-                                <td>{employee.lastName}</td>
-                                <td>{employee.email}</td>
-                                <td>
-                                    <button className='btn btn-info' onClick={()=> updateEmployee(employee.id)}> Update </button>
-                                    <button className='btn btn-danger' onClick={()=>removeEmployee(employee.id)} style={{marginLeft:'10px'}}>Delete</button>
-                                    
-                                </td>
-                            </tr>
-                        )
-                    }
-
+                  {employees.map((employee) => (
+                    <tr key={employee.id}>
+                      <td>{employee.id}</td>
+                      <td>{employee.firstName}</td>
+                      <td>{employee.lastName}</td>
+                      <td>{employee.email}</td>
+      
+                      <td className="text-center">
+                        <button
+                          className="btn btn-warning btn-sm me-2"
+                          onClick={() => updateEmployee(employee.id)}
+                        >
+                          Edit
+                        </button>
+      
+                        <button
+                          className="btn btn-danger btn-sm"
+                          onClick={() => removeEmployee(employee.id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
-            </table>
-    </div>
-  )
+      
+              </table>
+      
+            </div>
+          </div>
+      
+        </div>
+      )
 }
 
 export default ListEmployeeComponent
