@@ -46,9 +46,9 @@ const ListEmployeeComponent = () => {
           </div>
       
           <div className="card shadow-lg border-0">
-            <div className="card-body">
-      
-              <table className="table table-hover align-middle">
+              <div className="card-body">
+                  <div className="table-responsive">
+                  <table className="table table-hover align-middle">
                 <thead className="table-dark">
                   <tr>
                     <th>ID</th>
@@ -68,26 +68,19 @@ const ListEmployeeComponent = () => {
                       <td>{employee.email}</td>
       
                       <td className="text-center">
-                        <button
-                          className="btn btn-warning btn-sm me-2"
-                          onClick={() => updateEmployee(employee.id)}
-                        >
-                          Edit
-                        </button>
-      
-                        <button
-                          className="btn btn-danger btn-sm"
-                          onClick={() => removeEmployee(employee.id)}
-                        >
-                          Delete
-                        </button>
+                      <button className="btn btn-warning btn-sm me-2">
+                          <i className="bi bi-pencil-square"></i>
+                             </button>
+                             <button className="btn btn-danger btn-sm">
+                                   <i className="bi bi-trash"></i>
+                               </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
       
               </table>
-      
+               </div>
             </div>
           </div>
       

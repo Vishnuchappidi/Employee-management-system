@@ -36,3 +36,21 @@ body {
 .btn {
   border-radius: 8px;
 }
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+
+  .btn-sm {
+    padding: 4px 8px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-lg {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
