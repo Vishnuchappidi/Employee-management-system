@@ -81,36 +81,74 @@ const EmployeeComponent = () => {
         return <h2 className='text-center'>Add Employee</h2>
       }
    }
-  return (
-    <div className='container'>
-        <br/> <br/>
-        <div className='row'>
-            <div className='card col-md-6 offset-md-3 ofset-md-3'>
-                {
-                    pageTitle()
-                }
-                <div className='card-body'>
-                    <form>
-                        <div className="form-group mb-2">
-                            <label className='form-label'>First Name:</label>
-                            <input type='text' placeholder='Enter Employee First Name' name='firstName' value={firstName} className={`form-control ${errors.firstName ? 'is-invalid': ''}` } onChange={(e)=>setFirstName(e.target.value)}></input>
-                            {errors.firstName && <div className='invalid-feedback'>{errors.firstName}</div>}
-                        </div>
-                        <div className="form-group mb-2">
-                            <label className='form-label'>Last Name:</label>
-                            <input type='text' placeholder='Enter Employee Last Name' name='lastName' value={lastName} className={`form-control ${errors.lastName ? 'is-invalid': ''}` } onChange={(e)=>setLastName(e.target.value)}></input>
-                            {errors.lastName && <div className='invalid-feedback'>{errors.lastName}</div>}
-                        </div>
-                        <div className="form-group mb-2">
-                            <label className='form-label'>Email:</label>
-                            <input type='email' placeholder='Enter Employee Email' name='email' value={email} className={`form-control ${errors.email ? 'is-invalid': ''}`}  onChange={(e)=>setEmail(e.target.value)}></input>
-                            {errors.email && <div className='invalid-feedback'>{errors.email}</div>}
-                        </div>
-                        <button className='btn btn-success' onClick={saveOrUpdateEmployee}>Submit</button>
-                    </form>
+   return (
+    <div className="container py-5">
+      <div className="row justify-content-center">
+        <div className="col-lg-6">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body p-5">
+  
+              <h2 className="text-center fw-bold mb-4">
+                {id ? "Update Employee" : "Add Employee"}
+              </h2>
+  
+              <form>
+  
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter first name"
+                    name="firstName"
+                    className="form-control form-control-lg"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
                 </div>
+  
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter last name"
+                    name="lastName"
+                    className="form-control form-control-lg"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+  
+                <div className="mb-4">
+                  <label className="form-label fw-semibold">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter email"
+                    name="email"
+                    className="form-control form-control-lg"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+  
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg w-100"
+                >
+                  Save Employee
+                </button>
+  
+              </form>
+  
             </div>
+          </div>
         </div>
+      </div>
     </div>
   )
 }
