@@ -92,7 +92,7 @@ const EmployeeComponent = () => {
                 {id ? "Update Employee" : "Add Employee"}
               </h2>
   
-              <form>
+              <form onSubmit={saveOrUpdateEmployee}>
   
                 <div className="mb-3">
                   <label className="form-label fw-semibold">
